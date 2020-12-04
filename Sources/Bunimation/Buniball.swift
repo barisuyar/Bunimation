@@ -14,12 +14,8 @@ public struct Buniball<AnimatedView: View>: View {
     public var space: CGFloat = 8
     public var availableMovement: (up: Bool, down: Bool) = (true, true)
     
-    init(@ViewBuilder view: () -> AnimatedView) {
+    public init(@ViewBuilder view: () -> AnimatedView) {
         animatedView = view()
-    }
-    
-    mutating func toggle() {
-        isUpper.toggle()
     }
     
     public var body: some View { 
