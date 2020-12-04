@@ -14,8 +14,15 @@ public struct Buniball<AnimatedView: View>: View {
     public var space: CGFloat = 8
     public var availableMovement: (up: Bool, down: Bool) = (true, true)
     
-    public init(@ViewBuilder view: () -> AnimatedView) {
+    public init(animationTime: Double = 1, ballCount: Int = 6, ballSize: CGSize = CGSize(width: 24, height: 24),
+                             space: CGFloat = 8, availableMovement: (up: Bool, down: Bool) = (true, true), 
+                             @ViewBuilder view: () -> AnimatedView) {
         animatedView = view()
+        self.animationTime = animationTime
+        self.ballCount = ballCount
+        self.ballSize = ballSize
+        self.space = space
+        self.availableMovement = availableMovement
     }
     
     public var body: some View { 
