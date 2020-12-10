@@ -69,7 +69,7 @@ public struct Sandglass: View {
             if !isAnimating {
                 isAnimating = true
                 startAnimation()
-                Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { _ in
+                Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { _ in
                     startAnimation()
                 }
             }
