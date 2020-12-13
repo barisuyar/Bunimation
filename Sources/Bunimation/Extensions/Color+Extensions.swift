@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Color+Extensions.swift
 //  
 //
 //  Created by Barış Uyar on 4.12.2020.

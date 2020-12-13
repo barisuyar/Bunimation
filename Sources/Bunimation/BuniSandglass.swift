@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  BuniSandglass.swift
 //  
 //
 //  Created by BARIS UYAR on 11.12.2020.
