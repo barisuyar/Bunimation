@@ -47,3 +47,17 @@
 ```
 
 ![](Resources/buniball-3.gif)
+
+> lets change animation view as below
+
+```swift
+ZStack {
+    Capsule(style: .continuous)
+        .foregroundColor(.accentColor)
+    Capsule()
+        .frame(width: 10, height: 10)
+        .foregroundColor(.white)
+}
+```
+
+![](Resources/buniball-4.gif)
