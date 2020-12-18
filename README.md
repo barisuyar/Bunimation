@@ -24,4 +24,4 @@
             Circle()
         }
 ```
-![](Resources/buniball-1.mov)
+![](Resources/buniball-1.gif)
