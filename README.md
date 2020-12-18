@@ -25,3 +25,25 @@
         }
 ```
 ![](Resources/buniball-1.gif)
+
+> try avaliableMovement as (true, true)
+```swift
+    Buniball(animationTime: 1, ballCount: 5, 
+            ballSize: CGSize(width: 30, height: 30), 
+            space: 5, availableMovement: (true, true)) {
+            Circle()
+        }
+```
+
+![](Resources/buniball-2.gif)
+
+> try avaliableMovement as (false, true)
+```swift
+    Buniball(animationTime: 1, ballCount: 5, 
+            ballSize: CGSize(width: 30, height: 30), 
+            space: 5, availableMovement: (false, true)) {
+            Circle()
+        }
+```
+
+![](Resources/buniball-3.gif)
