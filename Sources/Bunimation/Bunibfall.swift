@@ -12,6 +12,8 @@ public struct Bunibfall: View {
     @State private var angle: Double = 90
     @State private var sticksOffset: CGFloat = 25
     
+    public init() {}
+    
     public var body: some View {
         ZStack {
             Rectangle()

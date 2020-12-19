@@ -22,6 +22,11 @@ public struct BuniWayf: View {
     @State public var backgroundColor: Color = .red
     @State public var wayfColor: Color = .white
     
+    public init(backgroundColor: Color = .red, wayfColor: Color = .white) {
+        self.backgroundColor = backgroundColor
+        self.wayfColor = wayfColor
+    }
+    
     public var body: some View {
         ZStack {
             BuniWayfBaseShape()

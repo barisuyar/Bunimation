@@ -14,6 +14,12 @@ public struct BuniCasper: View {
     @State public var casperColor: Color = .black
     @State public var eyesColor: Color = .black
     
+    public init(interval: Double = 0.5, casperColor: Color = .black, eyesColor: Color = .black) {
+        self.interval = interval
+        self.casperColor = casperColor
+        self.eyesColor = eyesColor
+    }
+    
     public var body: some View {
         VStack {
             ZStack {

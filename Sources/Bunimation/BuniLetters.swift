@@ -12,6 +12,11 @@ public struct BuniLetters: View {
     @State public var shouldShow: Bool = false
     @State public var parsedLetters: [String] = [""]
     
+    public init(shouldShow: Bool = false, letters: [String]) {
+        self.shouldShow = shouldShow
+        self.parsedLetters = letters
+    }
+    
     public var body: some View {
         GeometryReader { geometry in
             ZStack {
@@ -32,12 +37,6 @@ public struct BuniLetters: View {
         }
         
         return CGSize(width: offsetWidth, height: 0)
-    }
-}
-
-struct BuniLetters_Previews: PreviewProvider {
-    static var previews: some View {
-        BuniLetters()
     }
 }
 

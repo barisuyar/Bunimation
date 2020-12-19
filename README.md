@@ -26,7 +26,7 @@
 ```
 ![](Resources/buniball-1.gif)
 
-> try avaliableMovement as (true, true)
+> Try avaliableMovement as (true, true)
 ```swift
     Buniball(animationTime: 1, ballCount: 5, 
             ballSize: CGSize(width: 30, height: 30), 
@@ -37,7 +37,7 @@
 
 ![](Resources/buniball-2.gif)
 
-> try avaliableMovement as (false, true)
+> Try avaliableMovement as (false, true)
 ```swift
     Buniball(animationTime: 1, ballCount: 5, 
             ballSize: CGSize(width: 30, height: 30), 
@@ -48,7 +48,7 @@
 
 ![](Resources/buniball-3.gif)
 
-> lets change animation view as below
+> Let's change animation view as below
 
 ```swift
 ZStack {

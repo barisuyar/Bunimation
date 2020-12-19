@@ -18,6 +18,8 @@ public struct BuniClickedBall: View {
     @State private var bottomOuterCircleOffset: CGSize = CGSize(width: 0, height: -30)
     @State private var rightOuterCircleOffset: CGSize = CGSize(width: 30, height: 0)
     
+    public init() {}
+    
     public var body: some View {
         ZStack {
             Circle()

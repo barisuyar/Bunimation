@@ -21,6 +21,16 @@ public struct Sandglass: View {
     @State private var bottomOffset: CGFloat = 0
     @State private var isAnimating: Bool = false
     
+    public init(lineWidth: CGFloat = 5, size: CGSize = .init(width: 70, height: 120),
+                sandColor: Color = .orange, boxColor: Color = .black,
+                balance: CGFloat = 7) {
+        self.lineWidth = lineWidth
+        self.size = size
+        self.sandColor = sandColor
+        self.boxColor = boxColor
+        self.balance = balance
+    }
+    
     
     public var body: some View {
         ZStack {

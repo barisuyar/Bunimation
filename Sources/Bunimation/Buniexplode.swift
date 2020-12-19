@@ -9,8 +9,10 @@ import SwiftUI
 
 public struct Buniexplode: View {
     
-    @State var circleXOffset: CGFloat = -100
-    @State var height: CGFloat = 0
+    @State private var circleXOffset: CGFloat = -100
+    @State private var height: CGFloat = 0
+    
+    public init() {}
     
     public var body: some View {
         ZStack {
