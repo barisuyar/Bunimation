@@ -19,34 +19,32 @@ public struct BuniWayf: View {
     @State private var shouldStiff: Bool = false
     @State private var angle: Double = 0
     
-    @State public var backgroundColor: Color = .red
-    @State public var wayfColor: Color = .white
+    @ObservedObject public var viewModel: BuniWayfViewModel
     
-    public init(backgroundColor: Color = .red, wayfColor: Color = .white) {
-        self.backgroundColor = backgroundColor
-        self.wayfColor = wayfColor
+    public init(viewModel: BuniWayfViewModel) {
+        self.viewModel = viewModel
     }
     
     public var body: some View {
         ZStack {
             BuniWayfBaseShape()
-                .foregroundColor(backgroundColor)
+                .foregroundColor(viewModel.backgroundColor)
             Circle()
                 .trim(from: upperCircleTrimPositions.width, to: upperCircleTrimPositions.height)
                 .stroke(style: .init(lineWidth: 20, lineCap: .round))
                 .frame(width: 100, height: 100)
-                .foregroundColor(wayfColor)
+                .foregroundColor(viewModel.wayfColor)
                 .offset(y: upperCircleYOffset)
             Circle()
                 .trim(from: lowerCircleTrimPositions.width, to: lowerCircleTrimPositions.height)
                 .stroke(style: .init(lineWidth: 18, lineCap: .round, dash: []))
                 .frame(width: 60, height: 60)
-                .foregroundColor(wayfColor)
+                .foregroundColor(viewModel.wayfColor)
                 .offset(y: lowerCircleYOffset)
                 .rotationEffect(lowerCircleAngle)
             Circle()
                 .frame(width: fullCircleSize.width, height: fullCircleSize.height)
-                .foregroundColor(wayfColor)
+                .foregroundColor(viewModel.wayfColor)
                 .offset(x: fullCircleOffset.width, y: fullCircleOffset.height)
         }
         .frame(width: 120, height: 145)

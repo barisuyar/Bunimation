@@ -7,35 +7,28 @@
 
 import SwiftUI
 
-public struct Bunisnake<AnimatedView: View>: View {
-    
-    public var animatedView: AnimatedView
-    public var count: Int = 5
-    public var space: CGFloat = 0
-    public var shouldShadow: Bool = false
-    public var objectColor: Color = .random
+public struct BuniSnake<AnimatedView: View>: View {
     
     @State private var isDragging: Bool = false
     @State private var isUpper: Bool = false
     @State private var before: CGFloat = 0
     @State private var dragValue: CGSize = .zero
     
-    public init(count: Int = 5, space: CGFloat = 0, shouldShadow: Bool = false, @ViewBuilder view: () -> AnimatedView) {
-        self.animatedView = view()
-        self.count = count
-        self.space = space
-        self.shouldShadow = true
+    @ObservedObject public var viewModel: BuniSnakeViewModel<AnimatedView>
+    
+    public init(viewModel: BuniSnakeViewModel<AnimatedView>) {
+        self.viewModel = viewModel
     }
     
     public var body: some View {
-        HStack(spacing: space) {
-            ForEach(0..<count) { position in
-                animatedView.foregroundColor(objectColor)
+        HStack(spacing: viewModel.space) {
+            ForEach(0..<viewModel.count) { position in
+                viewModel.animatedView.foregroundColor(viewModel.objectColor)
                     .offset(dragValue)
                     .animation(Animation.default.delay(Double(position) / 10))
-                if shouldShadow && isDragging {
+                if viewModel.shouldShadow && isDragging {
                     let heightOffset: CGFloat = isUpper ? 5 : -5
-                    animatedView.foregroundColor(objectColor.opacity(0.5)).frame(width: 20, height: 20, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    viewModel.animatedView.foregroundColor(viewModel.objectColor.opacity(0.5)).frame(width: 20, height: 20)
                         .offset(x: dragValue.width - 20, y: dragValue.height + heightOffset)
                         .animation(Animation.default.delay(Double(position) / 10))
                 }

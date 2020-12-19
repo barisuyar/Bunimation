@@ -141,5 +141,95 @@ BuniLetters(viewModel: BuniLettersViewModel(text: "Barış", interval: 0.6, spec
 ```
 ![](Resources/buniletters-1.gif)
 
+## BuniSandglass
 
+> BuniSandglass is a customizable sandglass animation.
 
+### BuniSandglassViewModel
+
+> This is the main object that manage this amazing animation. It has several published variables.
+
+**lineWidth** is the line width of glass.
+**size** of glass.
+**sandColor** is the sand's color.
+**boxColor** is the glass's color.
+**balance** is the magic number to divesify glass's shape.
+
+#### Usage
+
+```swift
+init(lineWidth: CGFloat, size: CGSize, sandColor: Color, boxColor: Color, balance: CGFloat)
+```
+
+### BuniSandglass Usage
+
+```swift
+init(viewModel: BuniSandglassViewModel)
+```
+
+### Example
+
+```swift
+Sandglass(viewModel: BuniSandglassViewModel(lineWidth: 10, 
+                                            size: CGSize(width: 80, height: 160), 
+                                            sandColor: .blue, 
+                                            boxColor: .gray, 
+                                            balance: 10))
+```
+![](Resources/bunisandglass-1.gif)
+
+> Let's customize!
+
+```swift
+Sandglass(viewModel: BuniSandglassViewModel(lineWidth: 5, 
+                                            size: CGSize(width: 80, height: 150), 
+                                            sandColor: .orange, 
+                                            boxColor: .black, 
+                                            balance: 3))
+```
+![](Resources/bunisandglass-2.gif)
+
+```swift
+Sandglass(viewModel: BuniSandglassViewModel(lineWidth: 5, 
+                                            size: CGSize(width: 80, height: 120), 
+                                            sandColor: .pink, 
+                                            boxColor: .blue, 
+                                            balance: 10))
+```
+
+![](Resources/bunisandglass-3.gif)
+
+## BuniSnake
+
+> You can move your own view as snake while dragging. 
+
+**animatedView** is your custom view.
+animatedView **count**.
+**space** between animated views.
+**objectColor** background color of your animated view. Default is random.
+
+### Usage
+
+```swift
+init(count: Int = 5, space: CGFloat = 0, shouldShadow: Bool = false, @ViewBuilder view: () -> AnimatedView)
+```
+
+### Example
+
+```swift
+Bunisnake(count: 3, space: 10, shouldShadow: false, view: {
+    Circle()
+        .frame(width: 20, height: 20)
+})
+```
+
+![](Resources/bunisnake-1.gif)
+
+```swift
+Bunisnake(count: 3, space: 10, shouldShadow: true, view: {
+    Rectangle()
+        .frame(width: 20, height: 20)
+})
+```
+
+![](Resources/bunisnake-2.gif)
