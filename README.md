@@ -90,3 +90,13 @@ BuniClickedBall()
 ```
 
 ![](Resources/buniclickedball-1.gif)
+
+## BuniExplode
+
+### Example
+
+```swift
+BuniExplode()
+```
+
+![](Resources/buniexplode-1.gif)

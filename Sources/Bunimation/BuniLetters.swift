@@ -9,19 +9,19 @@ import SwiftUI
 
 public struct BuniLetters: View {
     
-    @State public var shouldShow: Bool = false
-    @State public var parsedLetters: [String] = [""]
+    public var shouldShow: Binding<Bool>
+    @ObservedObject public var viewModel: BuniLettersViewModel
     
-    public init(shouldShow: Bool = false, letters: [String]) {
+    public init(viewModel: BuniLettersViewModel, shouldShow: Binding<Bool>) {
+        self.viewModel = viewModel
         self.shouldShow = shouldShow
-        self.parsedLetters = letters
     }
     
     public var body: some View {
         GeometryReader { geometry in
             ZStack {
-                ForEach(0..<parsedLetters.count) { index in
-                    OneLetter(letter: parsedLetters[index], bgColor: index == parsedLetters.count - 1 ? .red : .gray)
+                ForEach(0..<viewModel.letters.count) { index in
+                    OneLetter(letter: viewModel.letters[index], bgColor: index == viewModel.letters.count - 1 ? .red : .gray)
                         .offset(calculateOffset(width: geometry.size.width, index: Double(index + 1)))
                 }
             }
@@ -30,9 +30,9 @@ public struct BuniLetters: View {
     
     private func calculateOffset(width: CGFloat, index: Double) -> CGSize {
         var offsetWidth: Double = Double((width / 2 - 20))
-        if shouldShow {
+        if shouldShow.wrappedValue {
             let indexDependingSpace = ((index - 1) * 44)
-            let widthSpecificSpace = ((Int(width) - (44 * parsedLetters.count - 4)) / 2)
+            let widthSpecificSpace = ((Int(width) - (44 * viewModel.letters.count - 4)) / 2)
             offsetWidth = Double(widthSpecificSpace) + indexDependingSpace
         }
         
