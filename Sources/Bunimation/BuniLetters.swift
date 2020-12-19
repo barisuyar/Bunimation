@@ -21,8 +21,11 @@ public struct BuniLetters: View {
         GeometryReader { geometry in
             ZStack {
                 ForEach(0..<viewModel.letters.count) { index in
-                    OneLetter(letter: viewModel.letters[index], bgColor: index == viewModel.letters.count - 1 ? .red : .gray)
-                        .offset(calculateOffset(width: geometry.size.width, index: Double(index + 1)))
+                    OneLetter(letter: viewModel.letters[index],
+                              bgColor: index == viewModel.letters.count - 1 ? viewModel.specialCharacterBackgroundColor
+                                                                            : viewModel.characterBackgroundColor)
+                        .offset(calculateOffset(width: geometry.size.width,
+                                                index: Double(index + 1)))
                 }
             }.animation(.easeIn(duration: viewModel.interval))
         }
