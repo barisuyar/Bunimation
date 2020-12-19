@@ -57,13 +57,13 @@ public struct Buniexplode: View {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            withAnimation(Animation.linear(duration: 0.3)) {
+            withAnimation(Animation.linear(duration: 0.6)) {
                 height = 0
                 circleXOffset = -100
             }
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.9) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             animate()
         }
     }
