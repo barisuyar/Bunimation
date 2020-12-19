@@ -24,7 +24,7 @@ public struct BuniLetters: View {
                     OneLetter(letter: viewModel.letters[index], bgColor: index == viewModel.letters.count - 1 ? .red : .gray)
                         .offset(calculateOffset(width: geometry.size.width, index: Double(index + 1)))
                 }
-            }
+            }.animation(.easeIn(duration: viewModel.interval))
         }
     }
     
