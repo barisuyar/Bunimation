@@ -10,15 +10,11 @@ import SwiftUI
 public struct BuniCasper: View {
     
     @State private var showEyes: Bool = true
-    @State public var interval: Double = 0.5
-    @State public var casperColor: Color = .black
-    @State public var eyesColor: Color = .black
+    @State private var interval: Double = 0.5
+    @State private var casperColor: Color = .black
+    @State private var eyesColor: Color = .black
     
-    public init(interval: Double = 0.5, casperColor: Color = .black, eyesColor: Color = .black) {
-        self.interval = interval
-        self.casperColor = casperColor
-        self.eyesColor = eyesColor
-    }
+    public init() {}
     
     public var body: some View {
         VStack {

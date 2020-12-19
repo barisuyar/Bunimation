@@ -55,5 +55,16 @@ public struct Buniexplode: View {
                 height = 20
             }
         }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            withAnimation(Animation.linear(duration: 0.3)) {
+                height = 0
+                circleXOffset = -100
+            }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.9) {
+            animate()
+        }
     }
 }

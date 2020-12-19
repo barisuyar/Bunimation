@@ -6,7 +6,7 @@
 
 > Buniball is a loading indicator. You can give your customized view, size, count (you need more than one), space between customized views, animation time and available movements which is up, down or both. 
 
-### Initilaze
+### Usage
 
 ```swift
     init(animationTime: Double = 1, ballCount: Int = 6,
@@ -61,3 +61,32 @@ ZStack {
 ```
 
 ![](Resources/buniball-4.gif)
+
+## Bunibfall
+
+![](Resources/bunibfall-1.gif)
+
+
+## BuniCasper
+
+> A ghost winked. 
+    
+### Example
+
+```swift
+BuniCasper()
+```
+
+![](Resources/bunicasper-1.gif)
+
+## BuniClickedBall
+
+> BuniClickedBall can use as loading indicator, button animation or something else. 
+
+### Example
+
+```swift
+BuniClickedBall()
+```
+
+![](Resources/buniclickedball-1.gif)
