@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GlassShape: Shape {
     
-    @Binding var balance: CGFloat
+    var balance: CGFloat
     
     func path(in rect: CGRect) -> Path {
         var path = Path()

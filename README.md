@@ -100,3 +100,46 @@ BuniExplode()
 ```
 
 ![](Resources/buniexplode-1.gif)
+
+## BuniLetters
+
+> You can show and hide your letters except the last one!
+
+### BuniLettersViewModel
+
+> This is the main object that manage this amazing animation. It has four published variables which are letters, interval, specialCharacterBackgroundColor and characterBackgroundColor.
+
+**Interval** is the duration of state change from show to hide or vice versa.
+**Letters** are shown. 
+**specialCharacterBackgroundColor** is the background color of the last char.
+**characterBackgroundColor** is the bacground color of chars except the last one.
+
+#### Usage
+
+```swift
+init(text: String, interval: Double, specialCharacterBackgroundColor: Color, characterBackgroundColor: Color)
+```
+
+Text will parse and set to letters.
+
+### ShouldShow
+
+> ShouldShow is a bound parameter which you can change state of BuniLetters.
+
+### BuniLetters Usage
+
+```swift
+init(viewModel: BuniLettersViewModel, shouldShow: Binding<Bool>)
+```
+
+### Example
+
+```swift
+@State var shouldShow: Bool = false
+
+BuniLetters(viewModel: BuniLettersViewModel(text: "Barış", interval: 0.6, specialCharacterBackgroundColor: .red, characterBackgroundColor: .blue), shouldShow: $shouldShow)
+```
+![](Resources/buniletters-1.gif)
+
+
+
