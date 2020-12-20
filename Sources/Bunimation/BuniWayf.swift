@@ -54,9 +54,6 @@ public struct BuniWayf: View {
         .onTapGesture {
             shouldAnimate.wrappedValue ? animate() : reset()
         }
-        .onAppear {
-            animate()
-        }
     }
     
     private func animate() {
