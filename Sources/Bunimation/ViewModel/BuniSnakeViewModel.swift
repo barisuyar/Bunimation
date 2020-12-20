@@ -15,11 +15,11 @@ public class BuniSnakeViewModel<AnimatedView: View>: ObservableObject {
     @Published public var shouldShadow: Bool = false
     @Published public var objectColor: Color = .random
     
-    public init(count: Int = 5, space: CGFloat = 0, shouldShadow: Bool = false, objectColor: Color = .random ,@ViewBuilder view: () -> AnimatedView) {
+    public init(count: Int = 5, space: CGFloat = 0, shouldShadow: Bool = false, objectColor: Color = .random, @ViewBuilder view: () -> AnimatedView) {
         self.animatedView = view()
         self.count = count
         self.space = space
-        self.shouldShadow = true
+        self.shouldShadow = shouldShadow
         self.objectColor = objectColor
     }
 }
