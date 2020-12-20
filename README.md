@@ -268,7 +268,7 @@ BuniSnake(viewModel: BuniSnakeViewModel(count: 10, space: 8, shouldShadow: false
 }))
 ```
 
-![](Resources/bunisnake-3gif)
+![](Resources/bunisnake-3.gif)
 
 ## BuniWayf
 
@@ -293,4 +293,18 @@ init(viewModel: BuniWayfViewModel)
 
 ### Example
 
+```swift
+BuniWayf(viewModel: .init(backgroundColor: .blue, wayfColor: .black))
+```
+![](Resources/buniwayf-1.gif)
 
+```swift
+BuniWayf(viewModel: .init(backgroundColor: .blue, wayfColor: .black))
+```
+![](Resources/buniwayf-2.gif)
+
+## Meta
+
+Barış UYAR – [@prospectcha](https://twitter.com/prospectcha) – baris.uyar@hotmail.com
+
+[Github](https://github.com/barisuyar)
