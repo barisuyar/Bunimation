@@ -21,7 +21,7 @@ public struct BuniWayf: View {
     
     @ObservedObject public var viewModel: BuniWayfViewModel
     
-    public init(viewModel: BuniWayfViewModel, shouldAnimate: Binding<Bool>) {
+    public init(viewModel: BuniWayfViewModel) {
         self.viewModel = viewModel
     }
     
