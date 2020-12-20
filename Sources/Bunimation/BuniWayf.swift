@@ -20,9 +20,11 @@ public struct BuniWayf: View {
     @State private var angle: Double = 0
     
     @ObservedObject public var viewModel: BuniWayfViewModel
+    public var shouldAnimate: Binding<Bool>
     
-    public init(viewModel: BuniWayfViewModel) {
+    public init(viewModel: BuniWayfViewModel, shouldAnimate: Binding<Bool>) {
         self.viewModel = viewModel
+        self.shouldAnimate = shouldAnimate
     }
     
     public var body: some View {
@@ -49,6 +51,9 @@ public struct BuniWayf: View {
         }
         .frame(width: 120, height: 145)
         .rotationEffect(.degrees(angle))
+        .onTapGesture {
+            shouldAnimate.wrappedValue ? animate() : reset()
+        }
         .onAppear {
             animate()
         }
@@ -100,7 +105,9 @@ public struct BuniWayf: View {
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.7) {
-            animate()
+            if shouldAnimate.wrappedValue {
+                animate()
+            }
         }
     }
     

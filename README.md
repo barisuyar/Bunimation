@@ -201,35 +201,96 @@ Sandglass(viewModel: BuniSandglassViewModel(lineWidth: 5,
 
 ## BuniSnake
 
-> You can move your own view as snake while dragging. 
+> You can move your own view as snake while dragging and you can add its shadow as well. 
+
+### BuniSnakeViewModel
 
 **animatedView** is your custom view.
 animatedView **count**.
 **space** between animated views.
 **objectColor** background color of your animated view. Default is random.
+**shouldShadow** is determined shadow's visibility.
 
-### Usage
+#### Usage
 
 ```swift
-init(count: Int = 5, space: CGFloat = 0, shouldShadow: Bool = false, @ViewBuilder view: () -> AnimatedView)
+init(count: Int = 5, space: CGFloat = 0, shouldShadow: Bool = false, objectColor: Color = .random, @ViewBuilder view: () -> AnimatedView)
+```
+
+### BuniSandglass Usage
+
+```swift
+init(viewModel: BuniSnakeViewModel<AnimatedView>)
+```
+
+#### Signature
+
+```swift
+struct BuniSnake<AnimatedView: View>: View
 ```
 
 ### Example
 
 ```swift
-Bunisnake(count: 3, space: 10, shouldShadow: false, view: {
+BuniSnake(viewModel: BuniSnakeViewModel(count: 3, space: 10, shouldShadow: false, view: {
     Circle()
-        .frame(width: 20, height: 20)
-})
+            .frame(width: 20, height: 20)
+}))
 ```
 
 ![](Resources/bunisnake-1.gif)
 
+> Let's try to set shouldShadow as true
+
 ```swift
-Bunisnake(count: 3, space: 10, shouldShadow: true, view: {
-    Rectangle()
-        .frame(width: 20, height: 20)
-})
+BuniSnake(viewModel: BuniSnakeViewModel(count: 3, space: 10, shouldShadow: true, view: {
+    Circle()
+            .frame(width: 20, height: 20)
+}))
 ```
 
 ![](Resources/bunisnake-2.gif)
+
+```swift
+BuniSnake(viewModel: BuniSnakeViewModel(count: 10, space: 8, shouldShadow: false, view: {
+    ZStack {
+        Capsule()
+            .frame(width: 30, height: 40)
+        Capsule()
+            .frame(width: 20, height: 30)
+            .foregroundColor(.white)
+        Capsule()
+            .frame(width: 10, height: 20)
+        Rectangle()
+            .frame(width: 10, height: 5)
+            .foregroundColor(.white)
+    }
+}))
+```
+
+![](Resources/bunisnake-3gif)
+
+## BuniWayf
+
+> Buniwayf is a loading indicator or wifi search animation.
+
+### BuniWayfViewModel
+
+**backgroundColor** is a base color of animation.
+**wayfColor** is a foreground color of inner objects.
+
+#### Usage
+
+```swift
+init(backgroundColor: Color, wayfColor: Color)
+```
+
+### BuniWayf Usage
+
+```swift
+init(viewModel: BuniWayfViewModel)
+```
+
+### Example
+
+
