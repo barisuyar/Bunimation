@@ -6,10 +6,17 @@
 
 > This is a loading indicator, you can customize it's background color.
 
+### Usage
+
+> You will create a Binding variable due to you can change background color anytime.
+```swift
+@State var circleColor: Color = .yellow
+```
+
 ### Examples
 
 ```swift
-BuniLoading(circleColor: .blue)
+BuniLoading(circleColor: $circleColor)
 ```
 ![](Resources/buniloading-1.gif)
 
