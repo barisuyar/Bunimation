@@ -2,6 +2,18 @@
 
 > An animation library implemented with SwiftUI. 
 
+## BuniLoading
+
+> This is a loading indicator, you can customize it's background color.
+
+### Examples
+
+```swift
+BuniLoading(circleColor: .blue)
+```
+![](Resources/buniloading-1.gif)
+
+
 ## Buniball
 
 > Buniball is a loading indicator. You can give your customized view, size, count (you need more than one), space between customized views, animation time and available movements which is up, down or both. 
