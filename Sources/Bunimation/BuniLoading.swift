@@ -12,28 +12,30 @@ public struct BuniLoading: View {
     @State private var circleOffset: CGPoint = .init(x: 20, y: 20)
     @State private var rectHeight: CGFloat = 0
     @State private var rotationDegree: Double = 0
-    @State public var circleColor: Color = .yellow
+    public var circleColor: Binding<Color>
     
-    public init() { }
+    public init(circleColor: Binding<Color>) {
+        self.circleColor = circleColor
+    }
     
     public var body: some View {
         ZStack {
             Circle()
                 .frame(width: 30, height: 30)
-                .foregroundColor(circleColor)
+                .foregroundColor(circleColor.wrappedValue)
                 .offset(x: circleOffset.x, y: circleOffset.y)
             Circle()
                 .frame(width: 30, height: 30)
-                .foregroundColor(circleColor)
+                .foregroundColor(circleColor.wrappedValue)
                 .offset(x: -circleOffset.x, y: -circleOffset.y)
             Rectangle()
                 .frame(width: 30, height: rectHeight)
-                .foregroundColor(circleColor)
+                .foregroundColor(circleColor.wrappedValue)
                 .cornerRadius(15)
                 .offset(x: 20, y: -20)
             Rectangle()
                 .frame(width: 30, height: rectHeight)
-                .foregroundColor(circleColor)
+                .foregroundColor(circleColor.wrappedValue)
                 .cornerRadius(15)
                 .offset(x: -20, y: 20)
         }
