@@ -2,6 +2,24 @@
 
 > An animation library implemented with SwiftUI. 
 
+## BuniEndless
+
+> Balls spin forever on the infinity sign. 
+
+### Usage
+
+> You will create a Binding variable due to you can change endless shape's color and balls' color anytime.
+```swift
+@State var endlessColor: Color = .yellow
+@State var ballsColor: Color = .yellow
+```
+
+### Examples
+
+```swift
+BuniEndless(endlessColor: $endlessColor, ballsColor: $ballsColor)
+```
+
 ## BuniLoading
 
 > This is a loading indicator, you can customize it's background color.
