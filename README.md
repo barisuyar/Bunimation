@@ -19,6 +19,7 @@
 ```swift
 BuniEndless(endlessColor: $endlessColor, ballsColor: $ballsColor)
 ```
+![](Resources/buniendless-1.gif)
 
 ## BuniLoading
 
