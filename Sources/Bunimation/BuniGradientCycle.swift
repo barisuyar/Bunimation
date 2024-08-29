@@ -17,7 +17,7 @@ public struct BuniGradientCycle: View {
                                                        color.opacity(0.5),
                                                        color]) }
 
-    public init(viewModel: BuniGradientCycleViewModel) {
+    public init(viewModel: BuniGradientCycleViewModel = BuniGradientCycleViewModel()) {
         self.viewModel = viewModel
     }
 
